@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let game of games | async">
+        {{game.player1_1}} - {{game.player1_2}} : {{game.player2_1}} - {{game.player2_2}}
+    </li>
+</ul>

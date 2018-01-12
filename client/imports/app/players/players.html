@@ -1,0 +1,13 @@
+<label for="name">
+    Neuer Spieler:
+</label>
+<input [(ngModel)]="name">
+<button (click)="addPlayer()">Hinzufügen</button>
+
+<ul>
+    <li *ngFor="let player of players | async">
+        <span [ngClass]="{'deleted': player.deleted}">{{player.name}}</span>
+        <button (click)="removePlayer(player._id)">Löschen</button>
+        <button (click)="restorePlayer(player._id)">Wiederherstellen</button>
+    </li>
+</ul>

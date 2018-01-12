@@ -1,0 +1,16 @@
+<label for="name">
+    Neue Spielrunde:
+</label>
+<input [(ngModel)]="name">
+<button (click)="addSingleRound()">Einfach-Runde</button>
+<button (click)="addDoubleRound()">Doppel-Runde</button>
+
+<ul>
+    <li *ngFor="let season of seasons | async">
+        <span [ngClass]="{'closed': season.closed}">
+            {{season.name}} (Typ:{{season.type}} - Spieler:{{season.players.length}})
+        </span>
+        <button (click)="closeSeason(season._id)">Schliessen</button>
+        <button (click)="openSeason(season._id)">Öffnen</button>
+    </li>
+</ul>
